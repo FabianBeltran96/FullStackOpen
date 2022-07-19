@@ -1,0 +1,7 @@
+note over browser:
+User write new note and submit
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: {content: "algo", date: "2022-07-19T22:08:25.073Z"}
+
