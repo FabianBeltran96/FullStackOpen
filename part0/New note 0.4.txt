@@ -1,7 +1,16 @@
 note over browser:
 User write new note and submit
+browser refresh
 end note
 
-browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-server-->browser: {content: "algo", date: "2022-07-19T22:08:25.073Z"}
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: note: notas
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML - code
+
+note over browser:
+Brower start executing the necesary request 
+like to work, asking for html css and js
+end note
 
