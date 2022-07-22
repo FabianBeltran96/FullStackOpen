@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
-
+import ReactDOM from 'react-dom/client'
 
 const Button = ({ text, handleClick }) => {
   return (
@@ -10,7 +9,12 @@ const Button = ({ text, handleClick }) => {
 
 const Statistic = ({ text, value }) => {
   return (
-    <p>{text} {value}</p>
+    <tbody>
+      <tr>
+        <td>{text}</td>
+        <td>{value}</td>
+      </tr>
+    </tbody>
   )
 }
 
@@ -69,6 +73,9 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />,
-  document.getElementById('root')
-)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
