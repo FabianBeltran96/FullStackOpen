@@ -1,7 +1,6 @@
 import Part from "./Part"
 
 const content = ({ parts }) => {
-    console.log(parts)
 
     return (
         <div>

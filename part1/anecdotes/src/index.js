@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client';
 
 const Button = ({ text, handleClick }) => {
-
   return (
     <>
       <button onClick={handleClick}>{text}</button>
     </>
   )
-
 }
 
 const MostVote = ({ anecdotes, points }) => {
@@ -26,7 +24,6 @@ const MostVote = ({ anecdotes, points }) => {
 }
 
 const App = () => {
-
   const anecdotes = [
     'If it hurts, do it more often.',
     'Adding manpower to a late software project makes it later!',
@@ -40,6 +37,7 @@ const App = () => {
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState([0, 0, 0, 0, 0, 0, 0, 0])
 
+
   const randomAnecdote = () => {
     setSelected(Math.floor(Math.random() * 7))
   }
@@ -50,6 +48,7 @@ const App = () => {
     setPoints(copy)
   }
 
+
   return (
     <div>
       <p>{anecdotes[selected]}</p>
@@ -59,7 +58,6 @@ const App = () => {
       <MostVote anecdotes={anecdotes} points={points}></MostVote>
     </div >
   )
-  
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
