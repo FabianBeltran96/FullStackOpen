@@ -1,14 +1,12 @@
 import React from 'react';
-const total = ({ parts }) => {
 
-    let total = 0
+const Total = ({ parts }) => {
 
-    parts.forEach(element => {
-        total += element.exercises
-    });
+    const total = parts.reduce((s, p) => {
+        console.log('what is happening', s, p)
+        return s + p.exercises
+    }, 0)
 
-    return (
-        <p>Number of exercises {total}</p>
-    )
+    return (<p><strong> total of {total} exercises</strong ></p>)
 }
-export default total
+export default Total
